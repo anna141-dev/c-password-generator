@@ -8,8 +8,18 @@
 
 ## Compilação
 
+- Primeiro, escolha uma versão.
+
+- password_generator: A padrão, usa a função rand() da linguagem C para escolher os caracteres. Menos seguro criptograficamente.
+- password_generator_urandom: Usa o /dev/urandom para escolher os caracteres. Mais seguro criptograficamente.
+- Futuramente, irei implementar Rejection Sampling.
+
 ```bash
 gcc password_generator.c -o password_generator -lm
+
+# Ou...
+
+gcc password_generator_urandom.c -o password_generator_urandom -lm
 ```
 
 -  A flag -lm é usada pra vincular a libm, usada pela função log2() no cálculo de entropia
